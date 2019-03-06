@@ -198,7 +198,7 @@ class Collinsharper_Purolator_Model_Soapinterface
      */
     private function getUserToken()
     {
-        return 'E19FB2A8-3CA4-4A3D-8C40-2C4B4CF44C3F';
+        return $this->getShippingModule()->getConfig('activationkey');
     }
 
     /**
@@ -247,9 +247,30 @@ class Collinsharper_Purolator_Model_Soapinterface
      */
     private function getLocation($type)
     {
-        $base = ($this->isTest() ?
-                'https://devwebservices.purolator.com/EWS/V1/' : 'https://webservices.purolator.com/EWS/V1/' );
+        if (in_array($type, ['ShippingDocumentsService'])) {
+            if ($this->isTest()) {
+                $base = 'https://devwebservices.purolator.com/EWS/V1/';
+            } else {
+                $base = 'https://devwebservices.purolator.com/EWS/V1/';
+            }
+        } else {
+            if ($this->isTest()) {
+                $base = 'https://devwebservices.purolator.com/EWS/V2/';
+            } else {
+                $base = 'https://webservices.purolator.com/EWS/V2/';
+            }
+        }
+
         return $base . $this->_locations[$type];
+    }
+
+    private function getTypeUrl($type)
+    {
+        if (in_array($type, ['ShippingDocumentsService'])) {
+            return "http://purolator.com/pws/datatypes/v1";
+        } else {
+           return "http://purolator.com/pws/datatypes/v2";
+        }
     }
 
     /**
@@ -264,12 +285,15 @@ class Collinsharper_Purolator_Model_Soapinterface
         /** Purpose : Creates a SOAP Client in Non-WSDL mode with the appropriate authentication and
          *           header information
          * */
+
+        $location = $this->getLocation($type);
+
         //Set the parameters for the Non-WSDL mode SOAP communication with your Development/Production credentials
         $this->_clients[$type] = new SoapClient(
-            $this->getWsdlPath($type), array(
+            $location . "?wsdl", array(
             'trace' => $this->isTest(),
             'location' => $this->getLocation($type),
-            'uri' => "http://purolator.com/pws/datatypes/v1",
+            'uri' => $this->getTypeUrl($type),
             'login' => $this->getKey(),
             'password' => $this->getPass()
             )
@@ -282,7 +306,7 @@ class Collinsharper_Purolator_Model_Soapinterface
         }
         //Define the SOAP Envelope Headers
         $headers[] = new SoapHeader(
-            'http://purolator.com/pws/datatypes/v1', 'RequestContext', array(
+            $this->getTypeUrl($type), 'RequestContext', array(
             'Version' => $version,
             'Language' => $lang,
             'GroupID' => 'xxx',
@@ -377,18 +401,16 @@ class Collinsharper_Purolator_Model_Soapinterface
         }
 
         if ($type == 'ShippingService') {
-			 if ($this->_is_consolidate) {
-                return '1.5';
-            }
-            return '1.5';
+
+            return '2.0';
         }
 
         if ($type == 'EstimatingService') {
-            return '1.4';
+            return '2.1';
         }
 
         if ($type == 'ServiceAvailabilityService') {
-            return '1.3';
+            return '2.0';
         }
     }
 

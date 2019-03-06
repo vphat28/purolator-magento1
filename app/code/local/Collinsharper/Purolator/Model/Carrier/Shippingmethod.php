@@ -23,6 +23,16 @@
  */
 class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping_Model_Carrier_Abstract
 {
+    const TEST_ACCOUNT_NUMBER = '9999999999';
+    const TEST_REGISTERED_ACCOUNT_NUMBER = '9999999999';
+
+    const COLLINSHARPER_ACCESS_KEY = '75db2bdc474547b7a91cdcc54e1b3465';
+    const COLLINSHARPER_ACCESS_PASSWORD = 'dOnTYSqD';
+
+    const TEST_COLLINSHARPER_ACCESS_KEY = 'a93117b3ced548858d29ad8438a6bc8b';
+    const TEST_COLLINSHARPER_ACCESS_PASSWORD = 'Mc+M.1}W';
+    const TEST_USER_TOKEN = '3fa7debc-e2af-4f03-b2de-5589c8f8b2e3';
+
 
     protected $_code = 'purolatormodule';
     protected $_cr = false;
@@ -61,6 +71,28 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
      */
     public function getConfig($key)
     {
+        if ($key === 'accesskey') {
+            if ($this->isTest()) {
+                return self::TEST_COLLINSHARPER_ACCESS_KEY;
+            } else {
+                return self::COLLINSHARPER_ACCESS_KEY;
+            }
+        }
+
+        if ($key === 'accesspassword') {
+            if ($this->isTest()) {
+                return self::TEST_COLLINSHARPER_ACCESS_PASSWORD;
+            } else {
+                return self::COLLINSHARPER_ACCESS_PASSWORD;
+            }
+        }
+
+        if ($key === 'activationkey') {
+            if ($this->isTest()) {
+                return self::TEST_USER_TOKEN;
+            }
+        }
+
         return Mage::getStoreConfig('carriers/' . $this->_code . '/' . $key);
     }
 
@@ -492,7 +524,7 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
                 $this->log($bits);
                 $this->log($response);
             }
-            Mage::Helper('purolatormodule')->checkResponse($response);
+
         } catch (Exception $e) {
 
             $this->log(__CLASS__ . __FUNCTION__ . "exception");
