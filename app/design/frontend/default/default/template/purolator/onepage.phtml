@@ -1,0 +1,36 @@
+<script type="text/javascript">
+<!-- CollinsHarper.com purolator -->
+	checkout.testaddressurl = '<?php echo $this->getUrl('checkout/onepage/testShippingAddress') ?>';
+	checkout.address_notice = '';
+			
+	function updateAddress(city,stateProv,country,postZip) {
+
+		
+		$('shipping:country_id').value = country;
+		$('shipping:city').value = city;
+		$('shipping:postcode').value = postZip;
+			// shaner
+		var regionStr = '<?php echo preg_replace('/\'/','\\\'',$this->helper('directory')->getRegionJson()) ?>';
+			
+		regions = regionStr.evalJSON();
+		for (state in regions.US) {
+			if (regions.US[state].code == stateProv){
+				$('shipping:region_id').setAttribute('defaultValue',  state);
+				$('shipping:region_id').value= state;
+			}
+		}
+		
+		for (province in regions.CA) {
+			
+			if (regions.CA[province].code == stateProv){
+				$('shipping:region_id').setAttribute('defaultValue',  province);
+				$('shipping:region_id').value= province;
+			}
+		}
+	}
+//]]>
+</script>
+<?php if($this->helper('purolatormodule')->getAddressvalidation()): ?>
+	<script type="text/javascript" src="<?php echo $this->getJsUrl('Collinsharper/opcheckout.js') ?>"></script>
+<?php endif ?>
+<!-- CollinsHarper.com purolator -->

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">    
+    <checkout_cart_index>
+        <reference name="checkout.cart">               
+            <block type="checkout/cart_shipping" name="purolator.checkout.cart.shipping" as="shipping" template="purolator/cart/shipping.phtml"/>           
+        </reference>
+    </checkout_cart_index>    
+    <checkout_onepage_index>
+        <reference name="content" after="checkout.onepage">            
+            <block type="checkout/onepage" name="purolator.checkout.onepage" template="purolator/onepage.phtml"/> 
+        </reference>        
+        <reference name="content" after="checkout.onepage.shipping">            
+                <block type="checkout/onepage_shipping" name="purolator.checkout.onepage.shipping" template="purolator/onepage/shipping.phtml"/>                      
+        </reference>        
+    </checkout_onepage_index>
+</layout>

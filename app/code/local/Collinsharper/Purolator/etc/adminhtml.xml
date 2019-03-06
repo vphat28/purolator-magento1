@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <puro_purolatormanifest translate="title" module="sales">
+                    <title>Purolator Manifest</title>
+                    <action>adminhtml/purolatormanifest</action>
+                    <sort_order>35</sort_order>
+                </puro_purolatormanifest>			
+            </children>
+            <children>
+                <puro_purolatorshipment translate="title" module="sales">
+                    <title>Purolator Shipment</title>
+                    <action>adminhtml/purolatorshipment</action>
+                    <sort_order>34</sort_order>
+                </puro_purolatorshipment>			
+            </children>			
+        </sales>
+    </menu>
+</config>

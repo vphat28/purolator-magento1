@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <catalog>
+            <groups>
+                <measure_units translate="label" module="chunit">
+                    <label>Measure Units</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <weight translate="label">
+                            <label>Weight</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>chunit/system_weight</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </weight>
+                        <length translate="label">
+                            <label>Length, Width, Height</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>chunit/system_length</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </length>
+                        <default_length translate="label note">
+                            <label>Default Length (inches)</label>
+                            <note>If a product does not have this dimension, this value will be used.</note>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_length>
+
+                        <default_width translate="label note">
+                            <label>Default Width (inches)</label>
+                            <note>If a product does not have this dimension, this value will be used.</note>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_width>
+
+                        <default_height translate="label note">
+                            <label>Default height (inches)</label>
+                            <note>If a product does not have this dimension, this value will be used.</note>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_height>
+
+
+                    </fields>
+                </measure_units>
+                <product_data translate="label" module="chunit">
+                    <label>Product Attribute Dimensions Setup</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <!-- product dims -->
+                        <product_length translate="label comment">
+                            <label>Product Length Attribute</label>
+                            <comment>
+                                <![CDATA[Note: Please select the attribute to use as the length of the product.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Collinsharper_MeasureUnit_Model_System_Productattributes</source_model>
+                            <sort_order>3424</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </product_length>
+                        <product_width translate="label comment">
+                            <label>Product Width Attribute</label>
+                            <comment>
+                                <![CDATA[Note: Please select the product attribute to use as the width of the product.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Collinsharper_MeasureUnit_Model_System_Productattributes</source_model>
+                            <sort_order>3425</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </product_width>
+                        <product_height translate="label comment">
+                            <label>Product Height Attribute</label>
+                            <comment>
+                                <![CDATA[Note: Please select the attribute to use as the height of the product.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Collinsharper_MeasureUnit_Model_System_Productattributes</source_model>
+                            <sort_order>3426</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </product_height>
+                    </fields>
+                    <!-- product dims -->
+                </product_data>
+
+            </groups>
+
+        </catalog>
+    </sections>
+</config>

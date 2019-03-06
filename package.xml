@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Collinsharper_Measureunit</name>
+    <version>1.0.4</version>
+    <stability>stable</stability>
+    <license>commercial</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Collins Harper, Unit setting module.</summary>
+    <description>Collins Harper, Unit setting module.</description>
+    <notes>Product field handling</notes>
+    <authors><author><name>Maxim Nulman</name><user>mnulman</user><email>mnulman@collinsharper.com</email></author></authors>
+    <date>2016-02-23</date>
+    <time>16:11:10</time>
+    <contents><target name="magecommunity"><dir name="Collinsharper"><dir name="MeasureUnit"><dir name="Helper"><file name="Data.php" hash="aa8dfeb7f57a40f55604a7a0ea50723b"/></dir><dir name="Model"><dir name="Currency"><dir name="Import"><file name="Webservicex.php" hash="61b2c9185b290c873bf7266590b2fdc3"/></dir></dir><dir name="System"><file name="Length.php" hash="e0332b1bf34b806c0073519e00831721"/><file name="Productattributes.php" hash="15c500e817044fa0c5ed2e50e3fdcede"/><file name="Weight.php" hash="69de146d198e27f91c2fe25f6a0231e0"/></dir></dir><dir name="etc"><file name="config.xml" hash="49746b347df582af6b58fafa0f19ae27"/><file name="system.xml" hash="64c015a1534eb36363500dd1e7d0ec93"/></dir><dir name="sql"><dir name="chunit_setup"><file name="mysql4-install-1.0.3.php" hash="b5195031a0037c8878c05b785e4810b7"/><file name="mysql4-upgrade-1.0.2-1.0.2.php" hash="b5195031a0037c8878c05b785e4810b7"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Collinsharper_MeasureUnit.xml" hash="b3a8ef6751462ec39b719909d2356933"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

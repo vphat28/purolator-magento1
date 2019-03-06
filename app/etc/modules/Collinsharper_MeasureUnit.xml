@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <Collinsharper_MeasureUnit>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Collinsharper_MeasureUnit>
+  </modules>
+</config>

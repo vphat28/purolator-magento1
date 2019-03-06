@@ -1,0 +1,50 @@
+Thank you for choosing CollinsHarper! For a video tutorial on installation and configuration, please refer to our website:
+ http://www.collinsharper.com.
+
+Note: 
+
+
+
+This module will validate customer shipping addresses on the Quick Quote and on the shopping cart. 
+If purolator does not think its a valid address it will return with an error and potentially some suggesions. The mModule allows for disabling this functionality however the rate request will fail if the address is not valid. This mModule has support for caching requests to purolator to speed up checkout process.
+
+
+ Installation is not a drag and drop operation; template files in default/default/template/checkout need to be manually udpated if your system is not a base install or just copied over from the design_frontend folder. There are two subfolders
+: CE for community edition
+ and EE for Enterprise Edition
+
+
+. If you are using a custom template package these tmpl files will need to be moved to your relative path.
+
+
+Before installing / updating or anything else:
+You should always backup your Magento Database & Magento Installation files. 
+For more instructions on how to backup your installation please refer to these instructions: 
+http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/maintaining_an_offline_backup. 
+Please read all instructions before you start so you understand all the caveats of installing this module.
+
+To Upgrade
+If you have a previous version of this module installed you will just need to follow the installation instructions and replace all the files.
+
+[Purolator Shipping Module]
+A more full featured Magento Shipping Module that does live rate lookups with Purolator and address validation. This module requires you have an account with Purolator.
+
+[Unzipping and Uploading]
+After you have downloaded the Purolator Shipping module for your store, please use a tool like Winrar, WinZip or similar to unzip the contents of the ZIP file you downloaded. Now check the extracted files, you should see three folders "app", "design_frontend" and "js".
+Then you are ready to upload your files. Open your favorite FTP/SFTP/SCP client and connect to the server with your Magento installation. Navigate to the root folder of the Magento installation, in other words the folder that contains folders like "app", "skin", "js", "lib" and more. Then, upload the extracted folders directly into the root of your Magento installation. Your FTP client will not overwrite any files, it will only upload the new files that come with the software.
+
+[Configuration]
+After you have uploaded the files, you need to login to your Magento administration panel and refresh your cache by going to System > Cache management. Choose "Select All" and click "Refresh", so the cache gets updated. Then, go to your System > Configuration page and select Shipping Methods. Verify that you have a new option called "Purolator" in the Shipping Methods page. If you can see it there, the Purolator module has been installed correctly.
+
+Setting up extra fields
+1. Log in to your Magento admin panel.
+2. Click 'Catalog' > 'Attributes' > 'Manage Attributes'.
+3. Select 'Add New Attribute'.
+4. Ensure the attribute code is all lowercase.
+5. Note they are decimal fields.
+
+[Testing]
+After you have configured the module, you need to make sure it is tested properly. Please open your Magento website in a browser, add a product to your cart, and then navigate to the shipping methods and see how it looks. Checkout and verify your shipping cost is representative of the quote amount you would get from a manual lookup.
+
+[Support]
+Need help? Please contact us at ch@collinsharper.com or call 1-866-325-9627. Paid installation is available.

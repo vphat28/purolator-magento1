@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <carriers>
+            <groups>
+                <purolatormodule translate="label" module="shipping">
+                    <label>Purolator Shipping</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>13</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <hide_frontend translate="label">
+                            <label>Hide in frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hide_frontend>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+
+                        <accesskey translate="label">
+                            <label>Access Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </accesskey>
+                        <accesspassword translate="label">
+                            <label>Password</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </accesspassword>
+
+                        <billingaccount translate="label">
+                            <label>Billing Account</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </billingaccount>
+                        <registeredaccount translate="label">
+                            <label>Registered Account</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </registeredaccount>
+
+                        <allowed_methods translate="label">
+                            <label>Allowed methods</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>purolatormodule/source_method</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allowed_methods>
+                        <!--
+                                               <markup_type translate="label">
+                                                   <label>Calculate Handling Fee</label>
+                                                   <frontend_type>select</frontend_type>
+                                                   <source_model>shipping/source_handlingType</source_model>
+                                                   <sort_order>11</sort_order>
+                                                   <show_in_default>1</show_in_default>
+                                                   <show_in_website>1</show_in_website>
+                                                   <show_in_store>0</show_in_store>
+                                               </markup_type>
+                                               <markupamount translate="label comment">
+                                                   <label>Markup Amount</label>
+                                                   <frontend_type>text</frontend_type>
+                                                   <sort_order>12</sort_order>
+                                                   <show_in_default>1</show_in_default>
+                                                   <show_in_website>1</show_in_website>
+                                                   <show_in_store>1</show_in_store>
+                                                   <comment>(whole numbers only) The amount to markup the quote we get back - enter 20 = 20% 100 = 100% 200 = 200% 20 = $20.00</comment>
+                                               </markupamount>
+                        -->
+                        <handling_type translate="label">
+                            <label>Calculate Handling Fee</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>shipping/source_handlingType</source_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </handling_type>
+                        <vatnumber translate="label">
+                            <label>Merchant VAT Number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </vatnumber>
+                        <handling translate="label">
+                            <label>Handling</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </handling>
+                        <failover_ratetitle translate="label">
+                            <label>Fail over Rate Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>17</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </failover_ratetitle>
+                        <failover_rate translate="label">
+                            <label>Fail over Rate Cost</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </failover_rate>
+
+                        <!--<dim_weight translate="label comment">-->
+                            <!--<label>Use dimentional Weight?</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>19</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                            <!--<comment>you can add an additonal field to your products called dim_weight. this field will be used instead of weight.</comment>-->
+                        <!--</dim_weight>-->
+
+
+                        <additionaldays translate="label">
+                            <label>Days to add to estimated delivery days.</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additionaldays>
+
+                        <date_format translate="label">
+                            <label>Estimated Delivery Date display format</label>
+                            <comment></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>purolatormodule/Source_Dateformats</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </date_format>
+
+                        <usecache translate="label">
+                            <label>Use Caching?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </usecache>
+
+                        <debug translate="label">
+                            <label>Enable Debug Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1003</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Verbose logging to system.log to help developers</comment>
+                        </debug>
+
+                        <testing translate="label">
+                            <label>Enable Test Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1002</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Use Test API</comment>
+                        </testing>
+                        <!--                        <estimate translate="label">
+                            <label>Use Purolator GetQuickEstimate </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If you select No , the module will use GetFullEstimate instead of GetQuickEstimate</comment>
+                        </estimate>           -->
+                        <printertype translate="label">
+                            <label>Documents for Thermal Printer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Select "No" for other printers.</comment>
+                        </printertype>
+                        <!-- Customs options -->
+                        <!--                        <enableintship translate="label">
+                            <label>Enable International Shipments</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>90</sort_order>
+                            <frontend_class>shipping-applicable-country</frontend_class>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Setting this to "No" will, "not" allow you to create International shipment via the Magento Admin. Pre-requisite : Customs Attributes Must Befilled for Catalog Products.</comment>
+                        </enableintship>						-->
+                        <billdutiestoparty translate="label">
+                            <label>Bill Duties To Party</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>91</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>purolatormodule/source_billduties</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only applicable for International Shipments.</comment>
+                        </billdutiestoparty>
+                        <businessrel translate="label">
+                            <label>Business Relationship</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>92</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>purolatormodule/source_buisrel</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only applicable for International Shipments.</comment>
+                        </businessrel>
+                        <dutyccy translate="label">
+                            <label>Duty Currency</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>92</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>purolatormodule/source_dutyccy</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only applicable for International Shipments.</comment>
+                        </dutyccy>
+                        <ietype translate="label">
+                            <label>Import Export Type</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>94</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>purolatormodule/source_importexporttype</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only applicable for International Shipments.</comment>
+                        </ietype>
+                        <customerinvoice translate="label">
+                            <label>Customs Invoice Document Indicator</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>93</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Only applicable for International Shipments.</comment>
+                        </customerinvoice>
+                        <harmcode translate="label">
+                            <label>Default Harmonized Code</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default Harmonized Code.Required if sending US/International shipment</comment>
+                        </harmcode>
+                        <com translate="label">
+                            <label>Default Country of Manufacturer</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>100</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default Country of Manufacturer.Required if sending US/International shipment</comment>
+                        </com>
+                        <nafta translate="label">
+                            <label>Default NAFTA Document Indicator</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>101</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default NAFTA Document Indicator.Required if sending US/International shipment</comment>
+                        </nafta>
+                        <textilei translate="label">
+                            <label>Default Textile Indicator</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>102</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default Textile Indicator.Required if sending US shipment</comment>
+                        </textilei>
+                        <textilem translate="label">
+                            <label>Default Textile Manufacturer</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>103</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default Textile Manufacturer.Required if the Textile Indicator is set.</comment>
+                        </textilem>
+                        <fcc translate="label">
+                            <label>Default FCC Document Indicator</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>104</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default FCC Document Indicator.Required if sending US/International shipment.</comment>
+                        </fcc>
+                        <sip translate="label">
+                            <label>Default Sender Is Producer Indicator</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>105</sort_order>
+                            <!--<frontend_class>shipping-applicable-country</frontend_class>-->
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Required if sending US/International shipment.</comment>
+                        </sip>
+
+                        <!--						<dangerousgoods translate="label">
+                            <label>Dangerous Goods Declaration</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Dangerous Goods Declaration.</comment>
+                        </dangerousgoods> 											-->
+                        <!--<declaredamt translate="label">-->
+                            <!--<label>Override Purolator Max Declared Value</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>30</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                            <!--<comment>Collect rates disregarding the item value being higher than the Maximum Declared Value</comment>-->
+                        <!--</declaredamt>-->
+                        <sallowspecific translate="label">
+                            <label>Ship to applicable countries</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>93</sort_order>
+                            <frontend_class>shipping-applicable-country</frontend_class>
+                            <source_model>adminhtml/system_config_source_shipping_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sallowspecific>
+                        <specificcountry translate="label">
+                            <label>Ship to Specific countries</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>94</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </specificcountry>
+                        <specificerrmsg translate="label">
+                            <label>Displayed Error Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>1000</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </specificerrmsg>
+                        <showmethod translate="label">
+                            <label>Show Method if Not Applicable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1004</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </showmethod>
+                        <sort_order translate="label">
+                            <label>Sort order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1005</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                        <free_method translate="label">
+                            <label>Free Services</label>
+                            <comment></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>purolatormodule/source_method</source_model>
+                            <sort_order>452</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </free_method>
+                        <free_shipping_enable translate="label">
+                            <label>Free shipping with minimum order amount</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>453</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </free_shipping_enable>
+                        <free_shipping_handling translate="label">
+                            <label>Free shipping Include Hanlding</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>453</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </free_shipping_handling>
+                        <free_shipping_subtotal translate="label">
+                            <label>Minimum order amount for free shipping</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>454</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </free_shipping_subtotal>
+                        <!--<dimunit translate="label">&ndash;&gt;-->
+                            <!--<label>Default Product Dimention Unit</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<sort_order>455</sort_order>-->
+                            <!--&lt;!&ndash;<frontend_class>shipping-applicable-country</frontend_class>&ndash;&gt;-->
+                            <!--<source_model>purolatormodule/source_dimentionunits</source_model>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</dimunit>-->
+                        <height translate="label">
+                            <label>Default Height (cm) </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>456</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+
+                        </height>
+                        <width translate="label">
+                            <label>Default Width (cm) </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>457</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+
+                        </width>
+                        <length translate="label">
+                            <label>Default Length (cm) </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>458</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </length>
+                        <ratio translate="label">
+                            <label>Packing Ratio (%)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Packing Ratio , 67% default is recommended.</comment>
+                        </ratio>
+                        <boxsize translate="label">
+                            <label>Default Box Size ( W*H*L)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Default Box Size (cm). Items bigger than the default box size will be considered as an package it self.</comment>
+                        </boxsize>
+                        <paytype translate="label">
+                            <label>Payment Type </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>purolatormodule/source_paymenttype</source_model>                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </paytype>
+                        <decval translate="label">
+                            <label>Insurance Coverage</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>501</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </decval>
+                        <intsig translate="label">
+                            <label>International Signature</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>13</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </intsig>
+                        <shipmentopt translate="label">
+                            <label>Shipment Options</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>purolatormodule/source_shipmentopt</source_model>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </shipmentopt>
+                        <cache translate="label">
+                            <label>Cache Validate ?</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1004</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cache>
+                    </fields>
+                </purolatormodule>
+            </groups>
+        </carriers>
+    </sections>
+</config>

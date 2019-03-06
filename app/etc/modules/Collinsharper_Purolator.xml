@@ -1,0 +1,11 @@
+<config>
+  <modules>
+    <Collinsharper_Purolator>
+      <active>true</active>
+      <codePool>local</codePool>
+        <depends>
+            <Collinsharper_MeasureUnit/>
+        </depends>
+    </Collinsharper_Purolator>
+  </modules>
+</config>
