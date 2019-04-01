@@ -257,7 +257,7 @@ class Collinsharper_Purolator_Adminhtml_PurolatormanifestController extends Mage
 
             header('content-type: application/pdf');
             header('Content-Disposition: attachment; filename="labels-' . date('Y-m-d--H-i-s') . '.pdf"');
-            echo $pdf->render();
+            $this->getResponse()->setBody($pdf->render());
         } catch (Exception $e) {
             return false;
         }

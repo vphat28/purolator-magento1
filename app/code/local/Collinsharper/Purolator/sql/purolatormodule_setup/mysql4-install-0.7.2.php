@@ -234,5 +234,3 @@ foreach ($sets as $set) {
 
 
 $installer->endSetup();
-
-?>
