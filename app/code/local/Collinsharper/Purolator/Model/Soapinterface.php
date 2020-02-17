@@ -251,7 +251,7 @@ class Collinsharper_Purolator_Model_Soapinterface
             if ($this->isTest()) {
                 $base = 'https://devwebservices.purolator.com/EWS/V1/';
             } else {
-                $base = 'https://devwebservices.purolator.com/EWS/V1/';
+                $base = 'https://webservices.purolator.com/EWS/V1/';
             }
         } else {
             if ($this->isTest()) {

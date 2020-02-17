@@ -204,7 +204,7 @@ class Collinsharper_Purolator_Adminhtml_PurolatormanifestController extends Mage
             } catch (Exception $e) {
                 mage::log(__CLASS__ . __FUNCTION__ . "exception");
                 mage::log(__CLASS__ . __FUNCTION__ . " " . $e->getMessage());
-                $this->_getSession()->addError(Mage::helper('adminhtml')->__('Purolator Module was not able to create a shipment.'));
+                $this->_getSession()->addError(Mage::helper('adminhtml')->__('c Purolator Module was not able to create a shipment.'));
                 $this->_redirect('*/*/index');
             }
 

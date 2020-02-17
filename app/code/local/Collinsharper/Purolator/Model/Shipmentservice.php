@@ -492,6 +492,7 @@ class Collinsharper_Purolator_Model_Shipmentservice extends Collinsharper_Purola
             $request->Shipment->PackageInformation->OptionsInformation->Options->OptionIDValuePair[$i]->ID = "DeclaredValue";
             $request->Shipment->PackageInformation->OptionsInformation->Options->OptionIDValuePair[$i]->Value = $amount;
         }
+        mage::log("CreateShipment request: " . json_encode($request),"1","purolator.log");
         return $request;
     }
 
@@ -542,6 +543,7 @@ class Collinsharper_Purolator_Model_Shipmentservice extends Collinsharper_Purola
             }
         }
 
+        mage::log("CreateShipment request: " . json_encode($request),"1","purolator.log");
         return $request;
     }
 

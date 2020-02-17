@@ -292,6 +292,7 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
 
         $_bits = $this->_makeFullRequest($request, $_items);
 
+        $this->log(__METHOD__ . " Purolator XML REquest" . print_r($_bits, 1));
         $_results = $this->_cachedBits($_bits);
 
         if (!$_results) {
@@ -456,9 +457,9 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
         }
 
         $cacheModel->setData('datestamp', now())
-                   ->setData('md5_request', md5(serialize($xml_bits)))
-                   ->setData('xmlresponse', serialize($xml_results))
-                   ->save();
+            ->setData('md5_request', md5(serialize($xml_bits)))
+            ->setData('xmlresponse', serialize($xml_results))
+            ->save();
 
         return true;
     }
@@ -1228,6 +1229,10 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
                 }
                 foreach ($service_rules->ServiceRules->ServiceRule as $service_rule) {
 
+                    if (isset($opt->Errors->Error)) {
+                        return $available_options;
+                    }
+
                     if ($service_rule->ServiceID == $opt["service"] && isset($available_options[$i])) {
 
                         if ($total_weight > $service_rule->MaximumTotalWeight->Value) {
@@ -1445,7 +1450,7 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
         $volume = 0;
         $box_count = 0;
         $box_volume = $box["useable_volume"];
-	$weight = 0;
+        $weight = 0;
         foreach ($temp as $key => $row) {
             $product = Mage::getModel('catalog/product')->load($row["id"]);
             $weight += $product->getWeight();
@@ -1460,7 +1465,7 @@ class Collinsharper_Purolator_Model_Carrier_Shippingmethod extends Mage_Shipping
                     array_push($result["Pieces"], array(true, "weight" => $weight));
                     $box_count++;
                     $volume = 0;
-		    $weight = 0;
+                    $weight = 0;
                     continue;
                 }
 
